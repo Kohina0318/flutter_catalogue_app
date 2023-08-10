@@ -12,26 +12,28 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      backgroundColor: MyTheme.creamColor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
+      backgroundColor:context.canvasColor,
       bottomNavigationBar: Container(
-        color:Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
           children: [
-            "\$${catalog.price}".text.bold.xl4.red500.make(),
+            "\$${catalog.price}".text.bold.xl3.red500.make(),
             ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(MyTheme.darkBluishColor),
+                          MaterialStateProperty.all(context.theme.floatingActionButtonTheme.backgroundColor),
                       shape: MaterialStateProperty.all(StadiumBorder()),
                     ),
-                    child: "Buy".text.xl2.make())
-                .wh(100, 50)
+                    child: "Add to cart".text.xl.bold.make())
+                .wh(150, 50)
           ],
-        ).p32(),
+        ).p16(),
       ),
       body: SafeArea(
         bottom: false,
@@ -48,12 +50,17 @@ class HomeDetailPage extends StatelessWidget {
               edge: VxEdge.top,
               child: Container(
                 width: context.screenWidth,
-                color: Colors.white,
+                color: context.cardColor,
                 child: Column(
                   children: [
-                    catalog.name.text.xl4.color(MyTheme.darkBluishColor).make(),
+                    catalog.name.text.xl4.color(context.primaryColor).make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                     10.heightBox,
+                    "Video mirroring and video out support: Up to 1080p through Lightning Digital AV Adapter and Lightning to VGA Adapter (adapters sold separately)7."
+                        .text
+                        .textStyle(context.captionStyle)
+                        .make()
+                        .p16(),
                   ],
                 ).py64(),
               ),
