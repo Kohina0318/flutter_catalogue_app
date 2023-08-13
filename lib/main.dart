@@ -8,7 +8,7 @@ import 'pages/login_page.dart';
 import 'pages/home_page.dart';
 
 void main() {
-  runApp(VxState(store: MyStore(), child: MyApp()) );
+  runApp(VxState(store: MyStore(), child: const MyApp()) );
 }
 
 class MyApp extends StatelessWidget {
