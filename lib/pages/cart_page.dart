@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cataloge/models/cart.dart';
-import 'package:flutter_cataloge/widgets/themes.dart';
 import "package:velocity_x/velocity_x.dart";
 
 class CartPage extends StatelessWidget {
@@ -56,20 +55,13 @@ class _CartTotal extends StatelessWidget {
 }
 
 
-class _CartList extends StatefulWidget {
-  const _CartList({super.key});
-
-  @override
-  State<_CartList> createState() => __CartListState();
-}
-
-class __CartListState extends State<_CartList> {
+class _CartList extends StatelessWidget{
   final _cart = CartModel();
 
   @override
   Widget build(BuildContext context) {
     return _cart.items.isEmpty ? 
-    "Noting to Show".text.xl2.makeCentered()
+    "Nothing to Show".text.xl2.makeCentered()
     : ListView.builder(
       itemCount: _cart.items?.length,
       itemBuilder: (context,index)=>ListTile(
@@ -78,9 +70,7 @@ class __CartListState extends State<_CartList> {
           icon: Icon(Icons.remove_circle_outline),
           onPressed: (){
             _cart.remove(_cart.items[index]);
-            setState(() {
-              
-            });
+            
           },
           ),
           title: _cart.items[index].name.text.make(),

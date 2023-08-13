@@ -2,9 +2,9 @@ import 'dart:convert';
 
 class CatalogModel {
 //singletons class 
- static final catalogModel = CatalogModel._internal();
-  CatalogModel._internal();
-   factory CatalogModel()=>catalogModel;
+//  static final catalogModel = CatalogModel._internal();
+//   CatalogModel._internal();
+//    factory CatalogModel()=>catalogModel;
 
 
 

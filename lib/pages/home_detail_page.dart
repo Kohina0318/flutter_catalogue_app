@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cataloge/widgets/home_widgets/add_to_cart.dart';
-import 'package:flutter_cataloge/widgets/themes.dart';
 import "package:velocity_x/velocity_x.dart";
 
 import '../models/catalog.dart';
