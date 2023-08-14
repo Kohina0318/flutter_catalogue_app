@@ -28,11 +28,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    // final catalogJson =
-    //     await rootBundle.loadString("assets/files/catalog.json");
+    final catalogJson =
+        await rootBundle.loadString("assets/files/catalog.json");
 
-    final response = await http.get(Uri.parse(url));
-    final catalogJson = response.body;
+    // final response = await http.get(Uri.parse(url));
+    // final catalogJson = response.body;
     final decodedData = jsonDecode(catalogJson);
     final productsData = decodedData["products"];
     // print(productsData);
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
               backgroundColor:
                   Theme.of(context).floatingActionButtonTheme.backgroundColor,
             ).badge(
-                color: Vx.red500,
+                color: Vx.gray200,
                 size: 21,
                 count: _cart.items.length,
                 textStyle: TextStyle(
